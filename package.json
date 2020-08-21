@@ -1,6 +1,6 @@
 {
   "name": "shiorijs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "REST API wrapper for shiori",
   "main": "dist/index.js",
   "scripts": {

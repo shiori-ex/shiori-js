@@ -1,6 +1,7 @@
 /** @format */
 
 import { LinkModel, SearchModel } from './models';
+import { AuthenticationError } from './errors';
 
 export class Client {
   constructor(private token: string, private endpoint: string) {}
@@ -49,8 +50,12 @@ export class Client {
 
     const data = await res.json();
 
+    if (res.status === 401) {
+      throw new AuthenticationError();
+    }
+
     if (!res.ok) {
-      throw Error(data);
+      throw new Error(data);
     }
 
     return data as T;
