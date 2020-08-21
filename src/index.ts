@@ -40,13 +40,12 @@ export class Client {
     headers.set('Content-Type', 'application/json');
     headers.set('Authorization', `Basic ${this.token}`);
 
-    const res = await window.fetch({
+    const res = await window.fetch(`${this.endpoint}/${path}`, {
       method,
-      url: `${this.endpoint}/${path}`,
       body: body,
-      bodyUsed: !!body,
       headers,
-    } as RequestInfo);
+      credentials: 'include',
+    });
 
     const data = await res.json();
 
