@@ -85,7 +85,7 @@ export class Client {
 
     const res = await window.fetch(`${this.endpoint}/${path}`, {
       method,
-      body: body,
+      body: body ? JSON.stringify(body) : null,
       headers,
       credentials: 'include',
     });
