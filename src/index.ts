@@ -54,7 +54,7 @@ export class Client {
    * @param link link object
    */
   public createLink(link: LinkModel): Promise<LinkModel> {
-    return this.post('link', link);
+    return this.post('links', link);
   }
 
   /**
@@ -64,7 +64,7 @@ export class Client {
    * @param link link object
    */
   public updateLink(link: LinkModel): Promise<LinkModel> {
-    return this.put(`link/${link.id_str}`, link);
+    return this.put(`links/${link.id_str}`, link);
   }
 
   /**
