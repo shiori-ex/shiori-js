@@ -1,5 +1,8 @@
 /** @format */
 
+/**
+ * Request/Response model of a link object.
+ */
 export interface LinkModel {
   id_str: string;
   url: string;
@@ -7,6 +10,9 @@ export interface LinkModel {
   tags: string[];
 }
 
+/**
+ * Response model of a search request.
+ */
 export interface SearchModel {
   hits: LinkModel[];
   query: string;
